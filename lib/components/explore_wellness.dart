@@ -20,6 +20,7 @@ class _ExploreWellnessState extends State<ExploreWellness> {
         child: Scaffold(
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
+            automaticallyImplyLeading: false,
             backgroundColor: Color.fromRGBO(255, 98, 0, 1),
             shape: RoundedRectangleBorder(
               borderRadius: new BorderRadius.vertical(

@@ -93,6 +93,7 @@ class _CreateAccount4State extends State<CreateAccount4> {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.4,),
                 Container(
+                  margin: EdgeInsets.symmetric(horizontal: 30),
                   width: 369.33,
                   height: 57.47,
                   child: FlatButton(

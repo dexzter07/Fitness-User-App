@@ -29,7 +29,11 @@ class _SearchState extends State<Search> {
                   alignment: Alignment.topRight,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Text("SEARCH", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.white),),
+                    child: InkWell(
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                        child: Text("SEARCH", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.white),)),
                   )),
               SizedBox(height: 15,),
               SizedBox(

@@ -70,18 +70,19 @@ class _MainPageState extends State<MainPage> {
         body: Column(
           children: [
             Container(
+
               padding: EdgeInsets.all(10),
               color: Colors.grey[200],
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  SizedBox(
-
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5),
                     height: 43.22,
                     child: FlatButton(
                       color: Color.fromRGBO(255, 98, 0, 1),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Text("FITNESS", style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w600),),
                       ),
                       shape: RoundedRectangleBorder(side: BorderSide(
@@ -96,13 +97,13 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ),
 
-                  SizedBox(
-
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5),
                     height: 43.22,
                     child: FlatButton(
                       color: Colors.teal[600],
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
 
                         child: Text("WELLNESS", style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w600),),
                       ),
@@ -112,7 +113,7 @@ class _MainPageState extends State<MainPage> {
                           style: BorderStyle.solid
                       ), borderRadius: BorderRadius.circular(5)),
                       onPressed: (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => ExploreClasses()));
+                        Navigator.push(context,MaterialPageRoute(builder: (context) {return ExploreClasses(index: 1,);}));
 
 
 
@@ -120,13 +121,14 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ),
 
-                  SizedBox(
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5),
 
                     height: 43.22,
                     child: FlatButton(
                       color: Colors.purple[600],
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
 
                         child: Text("DANCE", style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w600,),),
                       ),
@@ -136,7 +138,7 @@ class _MainPageState extends State<MainPage> {
                           style: BorderStyle.solid
                       ), borderRadius: BorderRadius.circular(5)),
                       onPressed: (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => ExploreClasses()));
+                        Navigator.push(context,MaterialPageRoute(builder: (context) {return ExploreClasses(index: 2,);}));
 
 
 
@@ -164,7 +166,7 @@ class _MainPageState extends State<MainPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Start finding yur favourite businesses today", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),),
+                          Text("Start finding your favourite businesses today", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),),
                           Icon(Icons.favorite, color: Colors.red,),
                         ],
                       ),

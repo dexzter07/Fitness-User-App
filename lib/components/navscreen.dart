@@ -64,19 +64,26 @@ class BottomNavScreen extends StatelessWidget {
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-          icon: Icon(Icons.home, color: Colors.deepOrangeAccent,),title:"HOME"
+        activeColorSecondary: Colors.deepOrangeAccent,
+          icon: Icon(Icons.home,),title:"HOME"
       ),
       PersistentBottomNavBarItem(
-          icon: Icon(Icons.explore, color: Colors.deepOrangeAccent,),title:"EXPLORE"
+          activeColorSecondary: Colors.deepOrangeAccent,
+
+          icon: Icon(Icons.explore,),title:"EXPLORE"
       ),
       PersistentBottomNavBarItem(
-          icon: Icon(Icons.favorite, color: Colors.deepOrangeAccent,),title:"FAVOURITE"
+          activeColorSecondary: Colors.deepOrangeAccent,
+          icon: Icon(Icons.favorite),title:"FAVOURITE"
       ),
       PersistentBottomNavBarItem(
-          icon: Icon(Icons.local_activity_rounded, color: Colors.deepOrangeAccent,),title:"ACTIVITY"
+          activeColorSecondary: Colors.deepOrangeAccent,
+          icon: Icon(Icons.local_activity_rounded),title:"ACTIVITY"
       ),
       PersistentBottomNavBarItem(
-          icon: Icon(Icons.account_circle, color: Colors.deepOrangeAccent,),title:"PROFILE"
+          activeColorSecondary: Colors.deepOrangeAccent,
+
+          icon: Icon(Icons.account_circle),title:"PROFILE"
       ),
     ];
   }

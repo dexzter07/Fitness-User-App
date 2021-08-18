@@ -8,11 +8,33 @@ import 'package:flutter/material.dart';
 import 'explore_wellness.dart';
 
 class ExploreClasses extends StatefulWidget {
+  final int index;
+  ExploreClasses({this.index});
   @override
   _ExploreClassesState createState() => _ExploreClassesState();
 }
 
-class _ExploreClassesState extends State<ExploreClasses> {
+class _ExploreClassesState extends State<ExploreClasses> with SingleTickerProviderStateMixin {
+  TabController _tabController ;
+  int _index = 0;
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _tabController.dispose();
+
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      _index = widget.index ?? 0;
+    });
+    _tabController = TabController(length: 3, vsync: this, initialIndex: _index);
+  }
+
   RangeValues values = RangeValues(4 , 11);
   @override
   Widget build(BuildContext context) {
@@ -24,15 +46,18 @@ class _ExploreClassesState extends State<ExploreClasses> {
         child: Scaffold(
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
+            automaticallyImplyLeading: false,
             backgroundColor: Color.fromRGBO(255, 98, 0, 1),
             shape: RoundedRectangleBorder(
               borderRadius: new BorderRadius.vertical(
                 bottom: Radius.circular(30),
               ),
             ),
-            bottom: const TabBar(
+            bottom: TabBar(
+              controller: _tabController,
               indicatorSize: TabBarIndicatorSize.label ,
               indicatorColor: Colors.white,
+
               tabs: [
                 Tab(child: Text('FITNESS', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),)),
                 Tab(child: Text('WELLNESS', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),)),
@@ -62,6 +87,7 @@ class _ExploreClassesState extends State<ExploreClasses> {
                 )),
           ),
           body: Builder(builder: (context) => TabBarView(
+            controller: _tabController,
             children: [
               //FITNESS
               Column(
